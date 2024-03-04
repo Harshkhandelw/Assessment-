@@ -37,8 +37,7 @@ a{
 }
 .drop{
     position: absolute;
-    display: block;
-    top: 50px;
+    top: 25px;
     left: 0px;
     width: 150px;
     background-color: blue;
@@ -48,4 +47,22 @@ h2:hover .drop{
     display: block;
     background-color:blue;
 }
-
+.drop:hover{
+    display: block;
+}
+.wraper{
+    position: relative;
+}
+.drop4{
+  position: absolute;
+  top:0px;
+  left: 150px;
+  background-color: blue;
+  display: none;
+}
+.wraper:hover .drop4{
+    display: block;
+}
+.drop4:hover{
+    display: block;
+}
