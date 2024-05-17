@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .thumbnail {
+            width: 100px;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .selected-image {
+            width: 500px;
+            height: 500px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <img id="selected-image" class="selected-image" src="" alt="Selected Image">
+    <script>
+      
+const images = [
+    "dog.png",
+    "luffy gear 5.jpeg",
+    "luffy-gear-5-moonlit-night-one-piece-thumb.jpg",   
+    "puma1.jpg",
+    "puma2.webp",
+    "t-shirt.webp",
+    "IMG_20220910_195753_892.jpg",
+    "IMG_20230308_013852_480.jpg",
+    "IMG_20230320_133239_575.jpg",
+    "IMG_20230801_220250_976.jpg"
+];
+
+function createThumbnails(imageArray) {
+    const Container = document.getElementById('container');
+    
+    imageArray.forEach((imageSrc, index) => {
+
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imageSrc;
+        thumbnail.className = 'thumbnail';
+        thumbnail.dataset.index = index; 
+        thumbnail.addEventListener('click', function() {
+            displaySelectedImage(imageSrc);
+        });
+        Container.appendChild(thumbnail);
+    });
+}
+function displaySelectedImage(imageSrc) {
+    const selectedImage = document.getElementById('selected-image');
+    selectedImage.src = imageSrc;
+}
+createThumbnails(images);
+displaySelectedImage(images[0]);
+
+    </script>
+</body>
+</html>
